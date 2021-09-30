@@ -2,29 +2,46 @@ import csv
 import pandas
 
 student_dict = {
-    "student": ["Angela", "James", "Lily"], 
-    "score": [56, 76, 98]
+    "student": ["Angela", "James", "Lily", "Stewart"],
+    "score": [56, 76, 98, 52]
 }
 
+print("LOOP THROUGH DICTIONARY:")
+print('for (key,value) in student_dict.items(): ')
+print('print(key)')
+print('print(value)')
+print('#######################################')
 #Looping through dictionaries:
 for (key, value) in student_dict.items():
     #Access key and value
-    #print(key)
-    #print(value)
+    print(key)
+    print(value)
     pass
-
+print('#######################################')
 import pandas
 student_data_frame = pandas.DataFrame(student_dict)
 
+print('PRINTING DATAFRAME:')
+print('student_data_frame.head(20)')
+print(student_data_frame.head(20))      #prints the head of the data frame  with index, column headings and data
+
+print('#######################################')
+print('LOOP THROUGH DATAFRAME: ')
+print('for(index, row) in student_data_frame.iterrows(): ')
+print('print(index)')
+print('print(row)')
+print('print(row.student')
+print('print(row.score)')
 #Loop through rows of a data frame
 for (index, row) in student_data_frame.iterrows():
     #Access index and row
     #Access row.student or row.score
-        #print(index)
-        #print(row)
-        #print(row.student)
-        #print(row.score)
+        print(index)
+        print(row)
+        print(row.student)
+        print(row.score)
         pass
+print('#######################################')
 
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
@@ -55,32 +72,32 @@ import pandas
 #into nato_dict.  but first entry is 'letter': 'code' pair
 #then use pop with key 'letter' and column headings
 #are removed from dictionary
-with open("nato_phonetic_alphabet.csv") as nato_phonetic_file:
-     nato_dataframe = csv.reader(nato_phonetic_file)
-     nato_dict = {index:row for(index, row) in nato_dataframe}
-         #print(index)
-         #print(row)
+# with open("nato_phonetic_alphabet.csv") as nato_phonetic_file:
+#      nato_dataframe = csv.reader(nato_phonetic_file)
+#      nato_dict = {index:row for(index, row) in nato_dataframe}
+#          #print(index)
+#          #print(row)
 
 # print(nato_dict)
 #
 # #THIS REMOVES ENTRY IN THE DICTIONARY WITH KEY 'letter'
-nato_dict.pop('letter')
-print(nato_dict)
+# nato_dict.pop('letter')
+# print(nato_dict)
+# #
+# name = input("ENTER YOUR NAME. ").upper()
+# #use append as mental model
+# #whatever is to be appended goes first
+# #then ordinary for loop
+# code_list=[nato_dict[letter] for letter in name]
 #
-name = input("ENTER YOUR NAME. ").upper()
-#use append as mental model
-#whatever is to be appended goes first
-#then ordinary for loop
-code_list=[nato_dict[letter] for letter in name]
-
-#was able to make list by using append.
-#if stuck again take stuff out of append
-#method place in front of for and place all between
-#brackets and should work.
-# for letter in name:
-#     code_list.append(nato_dict[letter])
-#
-print(code_list)
+# #was able to make list by using append.
+# #if stuck again take stuff out of append
+# #method place in front of for and place all between
+# #brackets and should work.
+# # for letter in name:
+# #     code_list.append(nato_dict[letter])
+# #
+# print(code_list)
 
 
 
