@@ -68,6 +68,9 @@ nato_dict.pop('letter')
 print(nato_dict)
 #
 name = input("ENTER YOUR NAME. ").upper()
+#use append as mental model
+#whatever is to be appended goes first
+#then ordinary for loop
 code_list=[nato_dict[letter] for letter in name]
 
 #was able to make list by using append.
