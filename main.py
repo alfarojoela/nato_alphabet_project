@@ -22,6 +22,7 @@ import pandas
 student_data_frame = pandas.DataFrame(student_dict)
 
 print('PRINTING DATAFRAME:')
+print('student_data_frame = pandas.DataFrame(student_dict)')
 print('student_data_frame.head(20)')
 print(student_data_frame.head(20))      #prints the head of the data frame  with index, column headings and data
 
