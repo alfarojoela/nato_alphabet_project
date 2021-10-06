@@ -58,10 +58,23 @@ import pandas
 #LECTURE SOLUTION:
 data = pandas.read_csv("nato_phonetic_alphabet.csv")
 
-phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
+#phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}  #can row be replaced with 'cell' instead?
+#a row seems to be an entire horizontal line.  this appears to be iteratting through individual cells or entries in the
+# letter and code columns.  picture a pointer pointing to first entry in columns titled letter and code.
+#data.iterrows then causes the pointers to advance to the next entry in the column.  cell 0 in letter column.  cell 0 in
+#code column.  then cell 1 in letter column.  cell 1 in code column.  then on and on.
+
+phonetic_dict = {column.letter:column.code for (index, column) in data.iterrows()}  #THIS WORKS THE SAME AS LECTURE
+#SOLUTION.  A LITTLE EASIER TO UNDERSTAND.  UNCLEAR ON HOW index is working or iterrows.
 
 word = input("Enter a word: ").upper()
 output_list = [phonetic_dict[letter] for letter in word]
+#messy way would but to declare output_list = []
+#then for letter in word:
+#output_list.append(phonetic_dict[letter])
+#so formatting to remember is when doing a comprehensive list or dictionary, the thing to be appended goes first.
+#then the for loop is written.
+
 print(output_list)
 
 ######################
